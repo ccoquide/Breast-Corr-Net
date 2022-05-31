@@ -17,6 +17,7 @@
 3. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc]-notObserved.net`  : List of links not present in the observed network
 4. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc].nodes` : List of network's nodes information such as key ID (integerer), node name (ex: `ENSG00000054598`). This nodes file can be used with the `.net`, `-notinproj.net` and `-notObserved.net` network files.
 
+**Note:** An empty `notinproj.net` or `notObserved.net` file means that such correlations don't exist.
 ### Other files
 
 1. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc].info` : Information of the network of the same `*.net` name. Lists the percentage of nodes being present in the observed network (the one constructed from RNA-RNA or DNA-DNA observed correlations) + the percentage of links being present in the observed network.
