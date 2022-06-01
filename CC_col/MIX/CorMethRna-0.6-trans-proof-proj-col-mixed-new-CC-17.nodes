@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	GeneName	external_gene_name	chromosome_name	Biotyoe
-1	ENSG00000229953	1	AL590666.2	AL590666.2	1	lncRNA
-2	ENSG00000272405	1	AL365181.3	AL365181.3	1	lncRNA
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2
+1	ENSG00000229953	1	AL590666.2	AL590666.2	1	156646507	156661424	-1	ENSG00000229953	lncRNA	non coding	lncRNA	ND	ND	ND
+2	ENSG00000272405	1	AL365181.3	AL365181.3	1	156641666	156644887	-1	ENSG00000272405	lncRNA	non coding	lncRNA	ND	ND	ND

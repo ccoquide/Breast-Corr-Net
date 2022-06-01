@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg09307985	1	COX7A1	uc002odm.1	ENSG00000161281
-2	cg08686960	1	COX7A1	uc002odm.1	ENSG00000161281
-3	cg15176213	1	COX7A1	uc002odm.1	ENSG00000161281
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg09307985	1														6835	699	COX7A1	ENSG00000161281	1346	uc002odm.1
+2	cg08686960	1														6835	1049	COX7A1	ENSG00000161281	1346	uc002odm.1
+3	cg15176213	1														6835	197	COX7A1	ENSG00000161281	1346	uc002odm.1

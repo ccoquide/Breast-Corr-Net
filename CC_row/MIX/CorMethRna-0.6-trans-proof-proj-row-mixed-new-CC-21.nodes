@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg01410453	1	DQX1	uc010yrw.2	ENSG00000144045
-2	cg06151718	1	DQX1	uc010yrw.2	ENSG00000144045
-3	cg24544105	1	DQX1	uc010yrw.2	ENSG00000144045
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg01410453	1														9042	48	DQX1	ENSG00000144045	165545	uc010yrw.2
+2	cg06151718	1														9042	72	DQX1	ENSG00000144045	165545	uc010yrw.2
+3	cg24544105	1														9042	94	DQX1	ENSG00000144045	165545	uc010yrw.2

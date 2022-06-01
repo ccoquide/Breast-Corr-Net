@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg07775813	1	SPESP1	uc002arn.2	ENSG00000258484
-2	cg09886641	1	SPESP1	uc002arn.2	ENSG00000258484
-3	cg14554415	1	SPESP1	uc002arn.2	ENSG00000258484
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg07775813	1														13082	528	SPESP1	ENSG00000258484	246777	uc002arn.2
+2	cg09886641	1														13082	178	SPESP1	ENSG00000258484	246777	uc002arn.2
+3	cg14554415	1														13082	148	SPESP1	ENSG00000258484	246777	uc002arn.2

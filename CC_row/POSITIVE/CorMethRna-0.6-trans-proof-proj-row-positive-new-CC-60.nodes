@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg18317788	1	ENPP6	uc003iwc.3	ENSG00000164303
-2	cg06915193	1	ENPP6	uc003iwc.3	ENSG00000164303
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg18317788	1														6758	66082	ENPP6	ENSG00000164303	133121	uc003iwc.3
+2	cg06915193	1														6758	66214	ENPP6	ENSG00000164303	133121	uc003iwc.3

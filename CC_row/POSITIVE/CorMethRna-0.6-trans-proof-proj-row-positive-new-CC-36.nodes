@@ -1,5 +1,5 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg05803361	1	PDZK1	uc001eon.2	ENSG00000174827
-2	cg13019092	1	PDZK1	uc001eon.2	ENSG00000174827
-3	cg19353949	1	PDZK1	uc001eon.2	ENSG00000174827
-4	cg10321723	1	PDZK1	uc001eon.2	ENSG00000174827
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg05803361	1														24113	344	PDZK1	ENSG00000174827	5174	uc001eon.2
+2	cg13019092	1														24113	53	PDZK1	ENSG00000174827	5174	uc001eon.2
+3	cg19353949	1														24113	685	PDZK1	ENSG00000174827	5174	uc001eon.2
+4	cg10321723	1														24113	95	PDZK1	ENSG00000174827	5174	uc001eon.2

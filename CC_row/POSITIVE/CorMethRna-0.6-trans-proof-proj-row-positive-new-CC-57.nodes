@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg16439941	1	MRPL47	uc003fjz.3	ENSG00000136522
-2	cg14147074	1	AQP11	uc001oyj.3	ENSG00000178301
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg16439941	1														27949	14	MRPL47	ENSG00000136522	57129	uc003fjz.3
+2	cg14147074	1														15416	118	AQP11	ENSG00000178301	282679	uc001oyj.3

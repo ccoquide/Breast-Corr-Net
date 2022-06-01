@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg26767443	1	EGLN2	uc002opi.3	ENSG00000269858
-2	cg18540299	1	EGLN2	uc002opi.3	ENSG00000269858
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg26767443	1														4848	10793	EGLN2	ENSG00000269858	112398	uc002opi.3
+2	cg18540299	1														4848	8549	EGLN2	ENSG00000269858	112398	uc002opi.3

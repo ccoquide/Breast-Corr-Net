@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg18522351	1	BICRA	uc002phh.4	ENSG00000063169
-2	cg01644723	1	ZNF252P	uc003zew.4	ENSG00000196922
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg18522351	1														16949	7538	BICRA	ENSG00000063169	29998	uc002phh.4
+2	cg01644723	1														16234	37	ZNF252P	ENSG00000196922	286101	uc003zew.4

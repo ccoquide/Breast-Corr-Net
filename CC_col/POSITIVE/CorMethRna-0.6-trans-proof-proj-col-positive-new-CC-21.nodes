@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	GeneName	external_gene_name	chromosome_name	Biotyoe
-1	ENSG00000262539	1	AC005829.2	AC005829.2	17	processed_pseudogene
-2	ENSG00000262500	1	MAPK8IP1P1	MAPK8IP1P1	17	processed_pseudogene
-3	ENSG00000263503	1	MAPK8IP1P2	MAPK8IP1P2	17	processed_pseudogene
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2
+1	ENSG00000262539	1	AC005829.2	AC005829.2	17	46259551	46260606	-1	ENSG00000262539	processed_pseudogene	other	pseudogene	ND	ND	ND
+2	ENSG00000262500	1	MAPK8IP1P1	MAPK8IP1P1	17	46243606	46245044	1	ENSG00000262500	processed_pseudogene	other	pseudogene	ND	644253	644253
+3	ENSG00000263503	1	MAPK8IP1P2	MAPK8IP1P2	17	45600869	45602340	-1	ENSG00000263503	processed_pseudogene	other	pseudogene	ND	644172	644172

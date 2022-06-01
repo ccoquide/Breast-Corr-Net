@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg10950028	1	GSTM1	uc001dyk.3	ENSG00000134184
-2	cg25593510	1	GSTM5	uc010ovu.1	ENSG00000134201
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg10950028	1														16670	214	GSTM1	ENSG00000134184	2944	uc001dyk.3
+2	cg25593510	1														16675	200	GSTM5	ENSG00000134201	2949	uc010ovu.1

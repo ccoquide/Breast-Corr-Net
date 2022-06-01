@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg14900031	1	S100P	uc003gjl.3	ENSG00000163993
-2	cg14140379	1	S100P	uc003gjl.3	ENSG00000163993
-3	cg22266967	1	S100P	uc003gjl.3	ENSG00000163993
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg14900031	1														30056	187	S100P	ENSG00000163993	6286	uc003gjl.3
+2	cg14140379	1														30056	184	S100P	ENSG00000163993	6286	uc003gjl.3
+3	cg22266967	1														30056	131	S100P	ENSG00000163993	6286	uc003gjl.3

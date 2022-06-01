@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg13286281	1	SLC7A4	uc002zud.3	ENSG00000099960
-2	cg23644624	1	SLC7A4	uc002zud.3	ENSG00000099960
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg13286281	1														31816	151	SLC7A4	ENSG00000099960	6545	uc002zud.3
+2	cg23644624	1														31816	141	SLC7A4	ENSG00000099960	6545	uc002zud.3

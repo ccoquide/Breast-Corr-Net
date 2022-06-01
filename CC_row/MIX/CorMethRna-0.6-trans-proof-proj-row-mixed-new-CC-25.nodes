@@ -1,8 +1,8 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg01648237	1	LOC339803	uc002saz.2	ND
-2	cg05037927	1	LOC339803	uc002saz.2	ND
-3	cg16328106	1	LOC339803	uc002saz.2	ND
-4	cg18158151	1	C2orf74	uc002sba.2	ENSG00000237651
-5	cg23405039	1	LOC339803	uc002saz.2	ND
-6	cg24757310	1	C2orf74	uc002sba.2	ENSG00000237651
-7	cg26147678	1	LOC339803	uc002saz.2	ND
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg01648237	1														18092	42	LOC339803	ND	339803	uc002saz.2
+2	cg05037927	1														18092	6	LOC339803	ND	339803	uc002saz.2
+3	cg16328106	1														18092	27	LOC339803	ND	339803	uc002saz.2
+4	cg18158151	1														18093	12	C2orf74	ENSG00000237651	339804	uc002sba.2
+5	cg23405039	1														18092	50	LOC339803	ND	339803	uc002saz.2
+6	cg24757310	1														18093	15	C2orf74	ENSG00000237651	339804	uc002sba.2
+7	cg26147678	1														18092	228	LOC339803	ND	339803	uc002saz.2

@@ -1,5 +1,5 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg01681009	1	ZNF830	uc002hih.4	ENSG00000198783
-2	cg13474520	1	FKTN	uc004bcr.3	ENSG00000106692
-3	cg13797775	1	FKTN	uc004bcr.3	ENSG00000106692
-4	cg23213170	1	FKTN	uc004bcr.3	ENSG00000106692
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg01681009	1														40163	47	ZNF830	ENSG00000198783	91603	uc002hih.4
+2	cg13474520	1														10917	82	FKTN	ENSG00000106692	2218	uc004bcr.3
+3	cg13797775	1														10917	106	FKTN	ENSG00000106692	2218	uc004bcr.3
+4	cg23213170	1														10917	95	FKTN	ENSG00000106692	2218	uc004bcr.3

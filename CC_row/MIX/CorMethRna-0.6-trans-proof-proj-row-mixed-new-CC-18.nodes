@@ -1,4 +1,4 @@
-#ID	#NAME	#NISPRESENT	nearestGeneSymbol	nearestTranscript	ensembl_gene_id
-1	cg01232511	1	PRSS21	uc002crr.4	ENSG00000007038
-2	cg07798610	1	PRSS21	uc002crr.4	ENSG00000007038
-3	cg22730830	1	PRSS21	uc002crr.4	ENSG00000007038
+#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg01232511	1														4324	281	PRSS21	ENSG00000007038	10942	uc002crr.4
+2	cg07798610	1														4324	518	PRSS21	ENSG00000007038	10942	uc002crr.4
+3	cg22730830	1														4324	269	PRSS21	ENSG00000007038	10942	uc002crr.4
