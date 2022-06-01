@@ -16,7 +16,7 @@
 2. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc]-notinproj.net` : List of links between nodes present in `[n_cc]`-th cluster of type `[type]` associated to the projection over col/row space  that are only present in the observed network (the one constructed from RNA-RNA or DNA-DNA observed correlations).
 3. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc]-notObserved.net`  : List of links not present in the observed network
 
-These files are formated as following (with first line containing Column names)
+- These files are formated as following (with first line containing Column names)
 	
         C1 C2 C3 C4
         S1 T1 W1 IP1
@@ -24,7 +24,7 @@ These files are formated as following (with first line containing Column names)
         S3 T3 W3 IP3
         ...
 	
-Where `Si` and `Ti` are the nodes inedex (integer) of the i-th link's source and target nodes, `Wi` its weight (integer for almost all `[*].net` files, exepted for `[*]-notinproj.net` where it is a float) and `IPi` a boolean (1 if the link is present in the observed network, 0 else).
++ Where `Si` and `Ti` are the nodes inedex (integer) of the i-th link's source and target nodes, `Wi` its weight (integer for almost all `[*].net` files, exepted for `[*]-notinproj.net` where it is a float) and `IPi` a boolean (1 if the link is present in the observed network, 0 else).
 
 4. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc].nodes` : List of network's nodes information such as key ID (integerer), node name (ex: `ENSG00000054598`). This nodes file can be used with the `[*].net`, `[*]-notinproj.net` and `[*]-notObserved.net` network files.
 
