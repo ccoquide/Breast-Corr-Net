@@ -15,7 +15,29 @@
 1. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc].net` : List of links related to the `[n_cc]`-th cluster extracted from the projection over the col (RNA) or row (Methylated DNA) space containing either only positive (`[type]` = positive) or negative (`[type]` = negative) complementary correlations or both of them (`[type]` = mixed).
 2. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc]-notinproj.net` : List of links between nodes present in `[n_cc]`-th cluster of type `[type]` associated to the projection over col/row space  that are only present in the observed network (the one constructed from RNA-RNA or DNA-DNA observed correlations).
 3. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc]-notObserved.net`  : List of links not present in the observed network
+
+These files are formated as following (with first line containing Column names)
+	
+        C1 C2 C3 C4
+        S1 T1 W1 IP1
+        S2 T2 W2 IP2
+        S3 T3 W3 IP3
+        ...
+	
+Where `Si` and `Ti` are the nodes inedex (integer) of the i-th link's source and target nodes, `Wi` its weight (integer for almost all `[*].net` files, exepted for `[*]-notinproj.net` where it is a float) and `IPi` a boolean (1 if the link is present in the observed network, 0 else).
+
 4. `CorMethRna-0.6-trans-proof-proj-[col/row]-[type]-new-CC-[n_cc].nodes` : List of network's nodes information such as key ID (integerer), node name (ex: `ENSG00000054598`). This nodes file can be used with the `[*].net`, `[*]-notinproj.net` and `[*]-notObserved.net` network files.
+
+The nodes files are formated as follows
+	
+       C1 C2 C3 C4 C5 ...
+       ID1 NAME1 IP1 EXIF11 EXIF21 ...
+       ID2 NAME2 IP2 EXIF12 EXIF22 ...
+       ID3 NAME3 IP3 EXIF13 EXIF23 ...
+       ...
+	
+Where `IDi` is the node index (integer) used in the associated `[*].net` file, `NAMEi` is the corresponding node's name, `IPi` is a boolean (1 if the node is not present in the observed network, 0 else), and finally `EXIF1i` is the first extra option such as the chromosome name, or other information related to either RNA or Methylated-DNA.
+
 
 **Note:** An empty `[*]-notinproj.net` or `[*]-notObserved.net` file means that such correlations don't exist.
 ### Other files
