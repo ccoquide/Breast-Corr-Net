@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
-1	cg02768694	1														6641	78	M1AP	ENSG00000159374	130951	uc010ysa.2
-2	cg01287476	1														6641	90	M1AP	ENSG00000159374	130951	uc010ysa.2
+#ID	#NAME	#NISPRESENT	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg02768694	1	6641	78	M1AP	ENSG00000159374	130951	uc010ysa.2
+2	cg01287476	1	6641	90	M1AP	ENSG00000159374	130951	uc010ysa.2

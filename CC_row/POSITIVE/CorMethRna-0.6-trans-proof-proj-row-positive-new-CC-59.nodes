@@ -1,3 +1,3 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
-1	cg17515024	1														40565	595	HIST3H2A	ENSG00000181218	92815	uc001hsy.3
-2	cg06034933	1														40565	73	HIST3H2A	ENSG00000181218	92815	uc001hsy.3
+#ID	#NAME	#NISPRESENT	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg17515024	1	40565	595	HIST3H2A	ENSG00000181218	92815	uc001hsy.3
+2	cg06034933	1	40565	73	HIST3H2A	ENSG00000181218	92815	uc001hsy.3

@@ -1,5 +1,5 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
-1	cg09646206	1														14976	105	SNX5	ENSG00000089006	27131	uc002wqc.3
-2	cg10843450	1														14976	45	SNX5	ENSG00000089006	27131	uc002wqc.3
-3	cg22555102	1														14976	96	SNX5	ENSG00000089006	27131	uc002wqc.3
-4	cg23402661	1														23863	28	ANAPC11	ENSG00000141552	51529	uc002kcc.1
+#ID	#NAME	#NISPRESENT	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
+1	cg09646206	1	14976	105	SNX5	ENSG00000089006	27131	uc002wqc.3
+2	cg10843450	1	14976	45	SNX5	ENSG00000089006	27131	uc002wqc.3
+3	cg22555102	1	14976	96	SNX5	ENSG00000089006	27131	uc002wqc.3
+4	cg23402661	1	23863	28	ANAPC11	ENSG00000141552	51529	uc002kcc.1
