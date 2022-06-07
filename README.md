@@ -47,6 +47,7 @@ Where `Si` and `Ti` are the nodes inedex (integer) of the i-th link's source and
 	
 Where `IDi` is the node index (integer) used in the associated `[*].net` file, `NAMEi` is the corresponding node's name, `IPi` is a boolean (1 if the node is not present in the observed network, 0 else), and finally `EXIF1i` is the first extra option such as the chromosome name, or other information related to either RNA or Methylated-DNA.
 
+5. `[col/row]-[type]-nodes-[tag]-stats.dat` : Statistics of nodes present in the col/row projected networks in terms of information `[tag]` (ex: `end_position`, `TypeSimpl`, ...)
 
 **Note:** An empty `[*]-notinproj.net` or `[*]-notObserved.net` file means that such correlations don't exist.
 ### II.3 Other files
