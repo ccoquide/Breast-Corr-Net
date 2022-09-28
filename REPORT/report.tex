@@ -1,4 +1,4 @@
-		\documentclass[10pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 %\usepackage[french]{babel}
 \usepackage{tikz-network}
@@ -70,10 +70,18 @@
 \date{\today}
 \begin{document}
 \maketitle
+\section{Aim of the study}
+We want to extract Methylated-DNA/RNA causaility relations from a pearson correlation matrix between methylated-DNA and RNA beta-values. Are these causalities directed or not ?
+
 \section{Methods and Data}
-We used an open access cancer dataset from GDC Data Portal. From raw data consisting in methylated DNA and RNA's beta-values for up to 841 tumorous and normal breast tissues, we built a Matrix of Pearson Correlation Coefficients between Methylated DNA and RNA from these beta-values. A network representing the Pearson correlation coefficients between pairs (M-DNA,RNA) consists in a bipartite graph with coefficients as weight of the links. Two possibilities are considered either the correlation is positive or negative. Therefore we consider a signed bipartite graph with undirected links.
-\subsection{Construction of the Signed Bipartite Network}
-A negative correlation coefficient between two random variables $A$ and $B$, $\rho(A,B)<0$, means that the more $A$ is observed, the lower $B$ is observed, whereas a positive value $\rho(A,B)>0$ tells that the more $A$ is present the more is $B$. By constructing the projected network (DNA-M projection and RNA projection), we can infer indirect positive and negative correlations between the molecules. Therefore by assigning sign to the links of the correlation network, we can easily infer the complementary correlation. Let $A$ and $C$ be two DNA-M sites and $B$ be a RNA molecule. If $\rho(A,C)$ and $\rho(B,C)$ are two measured Pearson correlation coefficients and have associated links $A-C$ and $B-C$ in the signed bipartite network, the DNA-M projection network will contain the signed link $A-B$ representing the complementary correlation coefficient $\rho(A,B)$. The complementary rules are the following: The complementary correlation is positive (negative) if both correlations have the same sign (different signs). However, correlations are not necessarily transitive meaning that for some $\rho(A,C)$ and $\rho(B,C)$ with absolute value big enough ($\approx 0.6$ for instance), the complementary correlation $\rho(A,B)$ might represent a very low correlation \cite{langford12}. The transitivity occurs when both correlations are large enough such that
+\subsection{Data}
+We used an open access cancer dataset from GDC Data Portal. From raw data consisting in methylated DNA and RNA's beta-values for up to 841 tumorous and normal breast tissues, we built a Matrix of Pearson Correlation Coefficients between Methylated DNA and RNA from these beta-values. A network representing the Pearson correlation coefficients between pairs (M-DNA,RNA) consists in a bipartite graph with coefficients as weight of the links. Two possibilities are considered either the correlation is positive or negative. Therefore we consider a signed bipartite graph with undirected links. Two other correlation matrices can be constructed from these beta-values, the DNA-DNA and RNA-RNA correlation matrices.
+
+\subsection{Signed Bipartite Network Construction}
+A negative correlation coefficient between two random variables $A$ and $B$, $\rho(A,B)<0$, means that the more $A$ is observed, the lower $B$ is observed, whereas a positive value $\rho(A,B)>0$ tells that the more $A$ is present the more is $B$. By constructing the projected network (DNA-M projection and RNA projection), we can infer indirect positive and negative correlations between the molecules. Therefore by assigning sign to the links of the correlation network, we can easily infer the complementary correlation. The question here is to measure differences between the projected correlations and correlations measured from RNA/DNA beta-values.
+
+\subsubsection{Correlation Transitivity}
+Let $A$ and $C$ be two DNA-M sites and $B$ be a RNA molecule. If $\rho(A,C)$ and $\rho(B,C)$ are two measured Pearson correlation coefficients and have associated links $A-C$ and $B-C$ in the signed bipartite network, the DNA-M projection network will contain the signed link $A-B$ representing the complementary correlation coefficient $\rho(A,B)$. The complementary rules are the following: The complementary correlation is positive (negative) if both correlations have the same sign (different signs). However, correlations are not necessarily transitive meaning that for some $\rho(A,C)$ and $\rho(B,C)$ with absolute value big enough ($\approx 0.6$ for instance), the complementary correlation $\rho(A,B)$ might represent a very low correlation \cite{langford12}. The transitivity occurs when both correlations are large enough such that
 \begin{equation}
 \rho(A,C)^{2} + \rho(B,C)^{2} > 1.
 \label{eq:transitivy}
@@ -81,13 +89,14 @@ A negative correlation coefficient between two random variables $A$ and $B$, $\r
 
 In order to respect the criteria defined in eq.~\ref{eq:transitivy}, we keep the Pearson correlation coefficient matrix elements $B_{ij}$ being greater than $\frac{1}{\sqrt{2}}$.
 
-\paragraph{Projections}
+\subsubsection{DNA-DNA and RNA-RNA Projected networks}
 The bipartite adjacency matrix $B$'s column index refers to the RNAs and its row to the DNA-Ms. Is elements are complex numbers $z=a+ib$ such that for a pair $i,j$, $Re(B_{ij})=1$ and $Im(B_{ij})=0$ if $\rho(i,j)>0$ or $Re(B_{ij})=0$ and $Im(B_{ij})=1$ otherwise. For a real bipartite adjacency matrix, the projection adjacency matrices are $A_{r}=(BB^{T})_{nd}$ and $A_{c}=(B^{T}B)_{nd}$ for row and column projections respectively, where $(X)_{nd}$ denotes the matrix $X$ with diagonal elements set to zero. In this case the value $A_{ij}$ is the number of common neighbor $k$, $i$ and $j$ shares in the bipartite network. In a similar way we compute the signed-row-projection adjacency matrix $A_{r}$ as following
 \begin{equation}
 A_{r}=[Re(BB^{\dagger}) + i.Im(BB^{T})]_{nd}
 \label{eq:signedproj}
 \end{equation}
-where $X^{\dagger}$ denoted the transpose conjugate of the complex matrix $X$. Finally the signed-column-projection adjacency matrix $A_{c}$ is computed by replacing $B$ with $B^{T}$. The number of neighbor $k$ that $i$ and $j$ share a correlation of same sign is $Re(A_{r}(i,j))$, these are positive complementary correlations. Similarly $Im(A_{r}(i,j))$ is the number of negative complementary correlations between DNA-M sites $i$ and $j$.
+where $X^{\dagger}$ denoted the transpose conjugate of the complex matrix $X$. Finally the signed-column-projection adjacency matrix $A_{c}$ is computed by replacing $B$ with $B^{T}$. The number of neighbor $k$ that $i$ and $j$ share a correlation of same sign is $Re(A_{r}(i,j))$, these are positive complementary correlations. Similarly $Im(A_{r}(i,j))$ is the number of negative complementary correlations between DNA-M sites $i$ and $j$.\\
+
 
 Here after is an example of a signed bipartite network (see Fig.~\ref{fig:ex_a}) composed of three methylated DNA $m_{1}$, $m_{2}$, and $m_{3}$ and four RNA $r_{1}$, $r_{2}$, $r_{3}$ and $r_{4}$. The complex bipartite adjacency matrix and its conjugate transposed are
 \begin{equation}
@@ -124,6 +133,19 @@ A_{c}=\begin{pmatrix}
 
 \subsection{Projected networks statistics}
 With the use of a threshold satisfying eq.\ref{eq:transitivy}, we have $683$ RNAs and $4687$ M-DNAs present in both projections. About $30\%$ ($90\%$) of the RNAs (M-DNAs) are involved in both negative and positive complementary correlations. Hereafter is presented statistics and preliminary figures for the projected networks' connected components (CC). We considered the only positive, only negative and both positive and negative signed projections.
+\paragraph{Projected correlations weight}
+In the projected networks, the link $(i,j)$ between two DNAs (RNAs) has either a positive weight or negative weight. This weight $\pm W_{ij}$ is an integer giving the number of neighbors $j$ and $i$ have in common in the signed bipartite network.\\
+
+
+We can construct a correlation-like weight $w_{ij} \in [-1,1]$ by normalizing links weight in each Connected Components. Considering a given connected component labeled $k$, such weights are calculated as follows
+\begin{equation}
+W_{ij} = \left\{\begin{matrix}
+\frac{w_{ij}}{w_{k}^{+}} & \mbox{if $w_{ij} > 0$}\\
+&\\
+\frac{w_{ij}}{w_{k}^{-}} & \mbox{if $w_{ij} < 0$}
+\end{matrix}\right.
+\end{equation}
+where $w_ {k}^{+}$ and $w_ {k}^{-}$ are respectively the highest positive and negative link weight in the connected component $k$.
 \begin{figure}[h!]
 \centering
 \includegraphics[scale=0.4]{clustered-matrices.pdf}
