@@ -13,6 +13,8 @@ if( ! "biomaRt" %in% installed.packages()){
 suppressPackageStartupMessages(library(tidyverse))
 suppressPackageStartupMessages(library(biomaRt))
 
+# Create and set working directory
+dir.create("~/interaction/", showWarnings = FALSE)
 setwd("~/interaction/")
 
 protein <- "./9606.protein.links.full.v11.5.txt"
