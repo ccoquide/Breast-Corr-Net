@@ -19,7 +19,7 @@ setwd("~/interaction/")
 
 protein <- "./9606.protein.links.full.v11.5.txt"
 if( ! file.exists(protein)){
-    download.file(url = "https://stringdb-static.org/download/protein.links.v11.5/9606.protein.links.v11.5.txt.gz",
+    download.file(url = "https://stringdb-static.org/download/protein.links.full.v11.5/9606.protein.links.full.v11.5.txt.gz",
                   destfile = protein)
     
 }
