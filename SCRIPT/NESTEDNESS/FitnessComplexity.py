@@ -14,7 +14,7 @@ Inuts:
 Outputs:
 	-The network of positive and negative correlations, in two separated files.
 	-The nodes Fitness and Complexity scores, in two separated files.
-	-The two panels plot of the unreordered and reoredred bi-adjacency matrix, in two separated files. Left (right) panel is associated to positive (negative) correlations.
+	-The two panels plot of the unreordered and reoredred bi-adjacency matrix, in two separated files. Top (bottom) panel is associated to positive (negative) correlations.
 
 Type "python3 FitnessComplexity.py filename unit sum 0.2" to apply this script to the bi-adjacency matrix described in the file filename by considering binary entries (1: link exists, 0: link doesn't exist) keeping all correlations whose absolute value is greater than 0.2. The Fitness and Complexity vector are unit-sum normalized.
 	
