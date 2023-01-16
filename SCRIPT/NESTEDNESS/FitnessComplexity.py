@@ -237,7 +237,7 @@ def RecursiveFQ(B,NC,NR, norm):
 #			if Q_[s][i]<=10**(-14):
 #				Q_[s][i]=0.0
 	return F_, Q_
-def PrintFQMatrix(B,Q,F,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
+def PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
 	"""
 	Create the two panels plot related to the columns and rows reordered bi-adjacency matrix
 	input: 
@@ -257,25 +257,50 @@ def PrintFQMatrix(B,Q,F,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
 	"""
 	ww=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-positive.net","w")
 	ww2=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-negative.net","w")
-	ww.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name"+"\t"+"Complexity_Score"+"\t"+"Fitness_Score"+"\t"+"\n")
-	ww2.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name"+"\t"+"Complexity_Score"+"\t"+"Fitness_Score"+"\t"+"\n")
+	ww_=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-positive.nodes","w")
+	ww2_=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-negative.nodes","w")
+	ww.write("RNA_Name\tDNA_Name\t"+opt+"\n")
+	ww_.write("Node_Name\tNode_Type\tComplexity_(Fitness)_Rank\n")
+	ww2.write("RNA_Name\tDNA_Name\t"+opt+"\n")
+	ww2_.write("Node_Name\tNode_Type\tComplexity_(Fitness)_Rank\n")
 	Mp=np.zeros((NR[0],NC[0]))
 	Mn=np.zeros((NR[1],NC[1]))
+	Namep={}#Dict of nodes information for the positive correlations related network
+	Namen={}#Same thing, but for negative correlations related network
+	for t in ["DNA","RNA"]:
+		Namep[t]={}
+		Namen[t]={}
 	for t in B:
 		tmp=t.split("\t")
 		j_,i_,v=int(tmp[0])-1,int(tmp[1])-1,float(tmp[2])
 		if v>0.0:
 			i=RF["+"][i_]
 			j=RQ["+"][j_]
+			type_i="DNA"
+			type_j="RNA"
 			Mp[i,j]=v
-			ww.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["+"][j_+1]+"\t"+t_ROW["+"][i_+1]+"\t"+str(Q[True][j_])+"\t"+str(F[True][i_])+"\n")
+			ww.write(t_COL["+"][j_+1]+"\t"+t_ROW["+"][i_+1]+"\t"+str(v)+"\n")
+			Namep[type_j][t_COL["+"][j_+1]]=str(j)
+			Namep[type_i][t_ROW["+"][i_+1]]=str(i)
 		else:
 			i=RF["-"][i_]
 			j=RQ["-"][j_]
+			type_i="DNA"
+			type_j="RNA"
 			Mn[i,j]=abs(v)
-			ww2.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["-"][j_+1]+"\t"+t_ROW["-"][i_+1]+"\t"+str(Q[False][j_])+"\t"+str(F[False][i_])+"\n")
+			ww2.write(t_COL["-"][j_+1]+"\t"+t_ROW["-"][i_+1]+"\t"+str(v)+"\n")
+			Namen[type_j][t_COL["-"][j_+1]]=str(j)
+			Namen[type_i][t_ROW["-"][i_+1]]=str(i)
 	ww.close()
 	ww2.close()
+	for t in ["DNA", "RNA"]:
+		for node in Namep[t]:
+			ww_.write(node+"\t"+t+"\t"+Namep[t][node]+"\n")
+	for t in ["DNA", "RNA"]:
+		for node in Namen[t]:
+			ww2_.write(node+"\t"+t+"\t"+Namen[t][node]+"\n")
+	ww_.close()
+	ww2_.close()
 	fig, ax = plt.subplots(2, 1, sharex=False, sharey=False, figsize=(10,10))
 	fig.tight_layout()
 	plt.subplots_adjust(left=None, bottom=None, right=None, top=None, wspace=1, hspace=1)
@@ -299,13 +324,13 @@ def PrintMatrix(B,NC,NR,opt, thrs):
 	"""
 	Create the two panels plot related to the raw bi-adjacency matrix
 	input:
-	        -The list of filtered links
-	        -Number of column nodes (for positive / negative correlations)
-	        -Number of row nodes (for positive/ negative corr.)
-	        -opt : "unit" or "weight"
-	        -threshold used to filter the raw matrix
+		-The list of filtered links
+		-Number of column nodes (for positive / negative correlations)
+		-Number of row nodes (for positive/ negative corr.)
+		-opt : "unit" or "weight"
+		-threshold used to filter the raw matrix
 	output:
-	        -Pdf file representing the positive correlations matrix and negative correlations matrix
+		-Pdf file representing the positive correlations matrix and negative correlations matrix
 	"""
 	Mp=np.zeros((NR[0],NC[0]))
 	Mn=np.zeros((NR[1],NC[1]))
@@ -336,7 +361,7 @@ def PrintMatrix(B,NC,NR,opt, thrs):
 	ax[1].annotate(r'Corr. -', xy=(0.8,0.8), xycoords='axes fraction', color="black",  bbox=dict(facecolor='white', edgecolor='black'), fontsize="15")
 	plt.savefig("ADN-ARN_Matrix-"+opt+"-"+str(thrs)+".pdf", bbox_inches = 'tight', pad_inches = 0)
 #############
-#           #
+#	   #
 #############
 fname=sys.argv[1]# filename of the row bi-adjacency matrix
 #The first two lines of the file must contains the number of columns and rows respectively. Then the second line contains only the number of links. All other lines describe links. The two first elements are associated to the column and row node index respectively. Note that nodes indexes are in the range (1,N) in the file. The last element is the correlation coefficient associated to this link
@@ -387,15 +412,15 @@ for k in range(len(tmpF["+"])):
 	i_=tmpF["+"][k]
 	ww.write(t_ROW["+"][i_+1] + "\t" + str(F[True][i_]) + "\t" + str(k+1)+"\t"+"+"+"\n")
 for k in range(len(tmpF["-"])):
-        i_=tmpF["-"][k]
-        ww.write(t_ROW["-"][i_+1] + "\t" + str(F[False][i_]) + "\t" + str(k+1)+"\t"+"-"+"\n")
+	i_=tmpF["-"][k]
+	ww.write(t_ROW["-"][i_+1] + "\t" + str(F[False][i_]) + "\t" + str(k+1)+"\t"+"-"+"\n")
 ww.close()
 for k in range(len(tmpQ["+"])):
-        i_=tmpQ["+"][k]
-        ww2.write(t_COL["+"][i_+1] + "\t" + str(Q[True][i_]) + "\t" + str(k+1)+"\t"+"+"+"\n")
+	i_=tmpQ["+"][k]
+	ww2.write(t_COL["+"][i_+1] + "\t" + str(Q[True][i_]) + "\t" + str(k+1)+"\t"+"+"+"\n")
 for k in range(len(tmpF["-"])):
-        i_=tmpQ["-"][k]
-        ww2.write(t_COL["-"][i_+1] + "\t" + str(Q[False][i_]) + "\t" + str(k+1)+"\t"+"-"+"\n")
+	i_=tmpQ["-"][k]
+	ww2.write(t_COL["-"][i_+1] + "\t" + str(Q[False][i_]) + "\t" + str(k+1)+"\t"+"-"+"\n")
 ww2.close()
 PrintMatrix(B,NC,NR,opt,thrs)# Plotting the raw matrix
-PrintFQMatrix(B,Q,F,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm)# Plotting the column and row reorganized matrix 
+PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm)# Plotting the column and row reorganized matrix 
