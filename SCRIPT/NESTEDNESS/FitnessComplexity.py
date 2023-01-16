@@ -237,7 +237,7 @@ def RecursiveFQ(B,NC,NR, norm):
 #			if Q_[s][i]<=10**(-14):
 #				Q_[s][i]=0.0
 	return F_, Q_
-def PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
+def PrintFQMatrix(B,Q,F,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
 	"""
 	Create the two panels plot related to the columns and rows reordered bi-adjacency matrix
 	input: 
@@ -257,8 +257,8 @@ def PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
 	"""
 	ww=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-positive.net","w")
 	ww2=open("ADN_ARN_FQ-Matrix-"+opt+"-"+str(thrs)+"-negative.net","w")
-	ww.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name\n")
-	ww2.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name\n")
+	ww.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name"+"\t"+"Complexity_Score"+"\t"+"Fitness_Score"+"\t"+"\n")
+	ww2.write("RNA_ID\tDNA_ID\t"+opt+"\t"+"RNA_Name"+"\t"+"DNA_Name"+"\t"+"Complexity_Score"+"\t"+"Fitness_Score"+"\t"+"\n")
 	Mp=np.zeros((NR[0],NC[0]))
 	Mn=np.zeros((NR[1],NC[1]))
 	for t in B:
@@ -268,12 +268,12 @@ def PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm):
 			i=RF["+"][i_]
 			j=RQ["+"][j_]
 			Mp[i,j]=v
-			ww.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["+"][j_+1]+"\t"+t_ROW["+"][i_+1]+"\n")
+			ww.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["+"][j_+1]+"\t"+t_ROW["+"][i_+1]+"\t"+str(Q[True][j_])+"\t"+str(F[True][i_])+"\n")
 		else:
 			i=RF["-"][i_]
 			j=RQ["-"][j_]
 			Mn[i,j]=abs(v)
-			ww2.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["-"][j_+1]+"\t"+t_ROW["-"][i_+1]+"\n")
+			ww2.write(str(j+1)+"\t"+str(i+1)+"\t"+str(v)+"\t"+t_COL["-"][j_+1]+"\t"+t_ROW["-"][i_+1]+"\t"+str(Q[False][j_])+"\t"+str(F[False][i_])+"\n")
 	ww.close()
 	ww2.close()
 	fig, ax = plt.subplots(2, 1, sharex=False, sharey=False, figsize=(10,10))
@@ -398,4 +398,4 @@ for k in range(len(tmpF["-"])):
         ww2.write(t_COL["-"][i_+1] + "\t" + str(Q[False][i_]) + "\t" + str(k+1)+"\t"+"-"+"\n")
 ww2.close()
 PrintMatrix(B,NC,NR,opt,thrs)# Plotting the raw matrix
-PrintFQMatrix(B,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm)# Plotting the column and row reorganized matrix 
+PrintFQMatrix(B,Q,F,RQ,RF,NC,NR,opt,thrs, t_COL, t_ROW, norm)# Plotting the column and row reorganized matrix 
