@@ -1,4 +1,4 @@
-DNA	Fitness Score	Fitness Rank	Sign
+DNA	ROLE	Fitness Score	Fitness Rank	Sign
 cg18006085	('CG_of_ESR1_regulated',)	0.5000004003476224	1	+
 cg12279294	('CG_of_ESR1_regulator',)	0.49999959965237645	2	+
 cg14534336	('CG_of_ESR1_regulated',)	2.3282103766759825e-16	3	+

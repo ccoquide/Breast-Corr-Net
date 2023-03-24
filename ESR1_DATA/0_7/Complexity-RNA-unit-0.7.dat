@@ -1,4 +1,4 @@
-RNA	Complexity Score	Complexity Rank	Sign
+RNA	ROLE	Complexity Score	Complexity Rank	Sign
 ESR1	('RNA_ESR1',)	0.4507811282794823	1	+
 APOA4	('RNA_ESR1_regulated',)	0.18974274473025277	2	+
 CBFA2T3	('RNA_ESR1_regulated',)	0.18974274473025277	3	+

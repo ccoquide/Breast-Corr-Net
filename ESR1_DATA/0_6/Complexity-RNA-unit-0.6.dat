@@ -1,4 +1,4 @@
-RNA	Complexity Score	Complexity Rank	Sign
+RNA	ROLE	Complexity Score	Complexity Rank	Sign
 PR	('RNA_ESR1_regulator',)	0.17008821936635932	1	+
 CAPN8	('RNA_ESR1_regulated',)	0.17008821936635932	2	+
 LONRF2	('RNA_ESR1_regulated',)	0.17008821936635932	3	+

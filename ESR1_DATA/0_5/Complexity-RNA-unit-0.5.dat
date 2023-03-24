@@ -1,4 +1,4 @@
-RNA	Complexity Score	Complexity Rank	Sign
+RNA	ROLE	Complexity Score	Complexity Rank	Sign
 KRT37	('RNA_ESR1_regulated',)	0.250000171268241	1	+
 C5orf49	('RNA_ESR1_regulated',)	0.250000171268241	2	+
 PFKFB1	('RNA_ESR1_regulated',)	0.2499998287317586	3	+
