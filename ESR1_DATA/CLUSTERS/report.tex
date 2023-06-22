@@ -83,11 +83,11 @@ Nested structures appear in the nature such that in ecological and socio-economi
 \left\{
 \begin{matrix}
 F^{(n)}_{d} =  \sum_{r} B_{dr}Q^{(n-1)}_{r}\\
-Q^{(n)}_{r} =  \frac{1}{\sum_{d}B_{dr}\frac{1}{F^{(n-1)}_{c}}}
+Q^{(n)}_{r} =  (\frac{1}{\sum_{d}B_{dr}\frac{1}{(F^{(n-1)}_{c})^{\gamma}}})^{1/\gamma}
 \end{matrix}
 \right.
 \end{equation}
-with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$.
+with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$. We set $\gamma$ to $2$.
 \paragraph{Product's complexity}
 \subsection{Data}
 We used an open access cancer dataset from GDC Data Portal. From raw data consisting in methylated DNA and RNA's beta-values for up to 841 tumorous and normal breast tissues, we built a Matrix of Pearson Correlation Coefficients between Methylated DNA and RNA from these beta-values. A network representing the Pearson correlation coefficients between pairs (M-DNA,RNA) consists in a bipartite graph with coefficients as weight of the links containing. We also project DNAs into spacial clusters of length 40K base-pairs, this turns $N_{DNA} = 364285$ DNAs into a set of $N_{cl} = 93690$ clusters. The nature of correlations are either positive or negative.
@@ -106,7 +106,7 @@ The set of ESR1 synthesis and regulation consists in 508 RNAs and 4959 clusters 
 \begin{center}
 \resizebox{0.7\columnwidth}{!}{%
 \includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Degree-Matrix-unit-0.7-PN.pdf}
-\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-Matrix-unit-0.7.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-ESR1-Matrix-unit-0.7.pdf}
 %\end{center}
 }
 \end{center}
@@ -114,52 +114,26 @@ The set of ESR1 synthesis and regulation consists in 508 RNAs and 4959 clusters 
 \end{figure}
  \begin{table}[h!]
 \centering
-\caption{\label{tab:tab1} The 10 best Clustered DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.}
-\begin{tabular}{l|r|r|}
-\cline{1-3}
-RANK & CLUSTER ID & RNA\\
-\cline{1-3}
-1 & Cluster 91401 & MYB\\
-2 & Cluster 226 & FSIP1\\
-3 & Cluster 62518 & THSD4\\
-4 & Cluster 20099 & CT62\\
-5 & Cluster 10765 & SRARP\\
-6 & Cluster 11329 & B3GALT1\\
-7 & Cluster 14885 & PDZK1\\
-8 & Cluster 42066 & SCNN1A\\
-9 & Cluster 53084 & ID4\\
-10 & Cluster 55962 & SVEP1\\
-\cline{1-3}
+\caption{\label{tab:tab1} Highest Clustered DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.
+ $^{1}$: cg02730804, cg04077850, cg14800014, cg13049992, cg09168797 and cg01977473, $^{2}$: cg27121959, $^{3}$:cg03633268.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & SCORE & RNA & SCORE\\
+\cline{1-5}
+1 & Cluster 91401$^{1}$ & 0.45 & MYB & 0.53\\
+2 & Cluster 62518$^{2}$ & 0.28 & THSD4 & 0.24\\
+3 & Cluster 20099$^{3}$ & 0.28 & CT62 & 0.22\\
+\cline{1-5}
 \end{tabular}
 \end{table}
- \begin{table}[h!]
-\centering
-\caption{\label{tab:tab1} The 10 worst Clustered DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.}
-\begin{tabular}{l|r|r|}
-\cline{1-3}
-RANK & CLUSTER ID & RNA\\
-\cline{1-3}
-1 & Cluster 90880 & MID1\\
-2 & Cluster 78693 & SIT1\\
-3 & Cluster 76563 & IRF4\\
-4 & Cluster 73346 & CCR7\\
-5 & Cluster 73171 & FOXA1\\
-6 & Cluster 69646 & ICOS\\
-7 & Cluster 66782 & MLPH\\
-8 & Cluster 64711 & PRR15\\
-9 & Cluster 60541 & ESR1\\
-10 & Cluster 52715 & BANK1\\
-\cline{1-3}
-\end{tabular}
-\end{table}
- \begin{table}[h!]
+\begin{table}[h!]
 \centering
 \caption{\label{tab:tab2}Nestedness scores of the network. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network. In the case of BINMATNEST temperature we have used 100 different random matrices and p-values for three null models are $p_{1} = 0.01$, $p_{2} = 0.04$ and $p_{3} = 0.06$.}
 \begin{tabular}{|r|r|}
 \cline{1-2}
 NODF & Temperature\\
 \cline{1-2}
-0.27&4.41\\
+0.3&4.4\\
 \cline{1-2}
 \end{tabular}
 \end{table}
