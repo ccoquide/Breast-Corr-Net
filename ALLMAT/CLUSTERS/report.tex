@@ -83,17 +83,85 @@ Nested structures appear in the nature such that in ecological and socio-economi
 \left\{
 \begin{matrix}
 F^{(n)}_{d} =  \sum_{r} B_{dr}Q^{(n-1)}_{r}\\
-Q^{(n)}_{r} =  (\frac{1}{\sum_{d}B_{dr}\frac{1}{(F^{(n-1)}_{c})^{\gamma}}})^{1/\gamma}
+Q^{(n)}_{r} =  \frac{1}{\sum_{d}B_{dr}(1-F^{(n-1)}_{c})}
 \end{matrix}
 \right.
 \end{equation}
-with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$. We set $\gamma$ to $2$.
+with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$.
 \paragraph{Product's complexity}
 \subsection{Data}
 We used an open access cancer dataset from GDC Data Portal. From raw data consisting in methylated DNA and RNA's beta-values for up to 841 tumorous and normal breast tissues, we built a Matrix of Pearson Correlation Coefficients between Methylated DNA and RNA from these beta-values. A network representing the Pearson correlation coefficients between pairs (M-DNA,RNA) consists in a bipartite graph with coefficients as weight of the links containing. We also project DNAs into spacial clusters of length 40K base-pairs, this turns $N_{DNA} = 364285$ DNAs into a set of $N_{cl} = 93690$ clusters. The nature of correlations are either positive or negative.
 
 We propose to measure complexity of RNAs from the complexity-fitness metric proposed in \cite{tacchella12}.
 \section{Results}
+\begin{figure}[h!]
+%\begin{center}
+\begin{center}
+\resizebox{0.7\columnwidth}{!}{%
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Matrix-unit-0.7-PN.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_FQ-Matrix-sum-unit-0.7-PN.pdf}
+}
+\end{center}
+\begin{center}
+\resizebox{0.7\columnwidth}{!}{%
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Degree-Matrix-unit-0.7-PN.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-Matrix-sum-unit-0.7-PN.pdf}
+%\end{center}
+}
+\end{center}
+\caption{\label{fig:fig1}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in the whole data set. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $\rho_{c} = 0.7$.}
+\end{figure}
+ \begin{table}[h!]
+\centering
+\caption{\label{tab:tab1} Top 10 DNAs and RNAs in terms of fitness and complexity scores, 715 RNAs and 1980 Clusters, with $\rho_{c} = 0.7$.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
+\cline{1-5}
+1 & Cluster 63264 & 0.0525 & TNMD & 0.0041\\
+2 & Cluster 66370 & 0.0291 & LIPE & 0.0041\\
+3 & Cluster 73992 & 0.0196 & ASPA & 0.0041\\
+4 & Cluster 34909 & 0.0195 & KCNIP2 & 0.0041\\
+5 & Cluster 18410 & 0.0141 & CD36 & 0.0041\\
+6 & Cluster 93686 & 0.0140 & RDH5 & 0.0041\\
+7 & Cluster 83354 & 0.0129 & ALDH1L1 & 0.0041\\
+8 & Cluster 55962 & 0.0121 & GLYAT & 0.0041\\
+9 & Cluster 11394 & 0.0099 & PLIN1 & 0.0041\\
+10 & Cluster 5042 & 0.0083 & GPD1 & 0.0041\\
+\cline{1-5}
+\end{tabular}
+\end{table}
+ \begin{table}[h!]
+\centering
+\caption{\label{tab:tab2} Last 10 DNAs and RNAs in terms of fitness and complexity scores, 715 RNAs and 1980 Clusters, with $\rho_{c} = 0.7$.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & Fitness Score ($\times 10^{-5}$)& RNA & Complexity Score ($\times 10^{-5}$)\\
+\cline{1-5}
+1 & Cluster 86765 & 0.2 & FOXC1 & 0.6\\
+2 & Cluster 86562 & 0.2 & IL2RG & 1\\
+3 & Cluster 81797 & 0.2 & RGMA & 1\\
+4 & Cluster 81555 & 0.2 & SNX20 & 1\\
+5 & Cluster 81499 & 0.2 & TBX21 & 1\\
+6 & Cluster 76088 & 0.2 & PTPN7 & 1\\
+7 & Cluster 72652 & 0.2 & SIT1 & 1\\
+8 & Cluster 71468 & 0.2 & STAC & 1.1\\
+9 & Cluster 70729 & 0.2 & SLAMF6 & 1.1\\
+10 & Cluster 69709 & 0.2 & BTLA & 1.2\\
+\cline{1-5}
+\end{tabular}
+\end{table}
+\begin{table}[h!]
+\centering
+\caption{\label{tab:tab3}Nestedness scores of the network obtained from $\rho_{c} = 0.7$. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network.}
+\begin{tabular}{|r|r|}
+\cline{1-2}
+NODF & Temperature\\
+\cline{1-2}
+0.7&0.3\\
+\cline{1-2}
+\end{tabular}
+\end{table}
 \begin{figure}[h!]
 %\begin{center}
 \begin{center}
@@ -105,45 +173,63 @@ We propose to measure complexity of RNAs from the complexity-fitness metric prop
 \begin{center}
 \resizebox{0.7\columnwidth}{!}{%
 \includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Degree-Matrix-unit-0.8-PN.pdf}
-\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-Matrix-unit-0.8.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-Matrix-sum-unit-0.8-PN.pdf}
 %\end{center}
 }
 \end{center}
-\caption{\label{fig:fig1}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in the whole data set. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $|\rho| \geq 0.8$.}
+\caption{\label{fig:fig1}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in the whole data set. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $\rho_{c} = 0.8$.}
 \end{figure}
  \begin{table}[h!]
 \centering
-\caption{\label{tab:tab1} Highest Clustered DNAs and RNAs in terms of fitness and complexity scores, 94 RNAs and 109 Clusters, with $\rho_{c} = 0.7$. The Fitness score vector has only one value close to $1$. $^{1} : cg26476925$}
+\caption{\label{tab:tab4} Top 10 DNAs and RNAs in terms of fitness and complexity scores, 94 RNAs and 109 Clusters, with $\rho_{c} = 0.8$.}
 \begin{tabular}{l|rr|rr|}
 \cline{1-5}
-RANK & CLUSTER ID & SCORE & RNA & SCORE\\
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
 \cline{1-5}
-1 & Cluster 34909$^{1}$ & 0.99 & GZMK & 0.08\\
-2 & - & - & CD96 & 0.08\\
-3 & - & - & EOMES & 0.08\\
-4 & - & - & GPR171 & 0.08\\
-5 & - & - & TRBV19 & 0.08\\
-6 & - & - & TRAV8-3 & 0.08\\
-7 & - & - & TRAV12-3 & 0.08\\
-8 & - & - & TRBV2 & 0.08\\
-9 & - & - & TRBV3-1 & 0.08\\
-10 & - & - & LINC00861 & 0.08\\
-11 & - & - & TRBV18 & 0.08\\
-12 & - & - & TRBV7-9 & 0.08\\
+1 & Cluster 34909 & 0.2464 & GZMK & 0.0247\\
+2 & Cluster 83354 & 0.0800 & CD96 & 0.0247\\
+3 & Cluster 18410 & 0.0712 & EOMES & 0.0247\\
+4 & Cluster 5042 & 0.0676 & GPR171 & 0.0247\\
+5 & Cluster 70240 & 0.0489 & TRBV19 & 0.0247\\
+6 & Cluster 80727 & 0.0411 & TRAV8-3 & 0.0247\\
+7 & Cluster 11394 & 0.0339 & TRAV12-3 & 0.0247\\
+8 & Cluster 24330 & 0.0222 & TRBV2 & 0.0247\\
+9 & Cluster 34745 & 0.0213 & TRBV3-1 & 0.0247\\
+10 & Cluster 50492 & 0.0196 & LINC00861 & 0.0247\\
+\cline{1-5}
+\end{tabular}
+\end{table}
+ \begin{table}[h!]
+\centering
+\caption{\label{tab:tab5} Last 10 DNAs and RNAs in terms of fitness and complexity scores, 94 RNAs and 109 Clusters, with $\rho_{c} = 0.8$.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
+\cline{1-5}
+1 & Cluster 91366 & 0.0002 & SNX20 & 0.0005\\
+2 & Cluster 89519 & 0.0002 & PTPN7 & 0.0006\\
+3 & Cluster 86376 & 0.0002 & IL2RG & 0.0006\\
+4 & Cluster 66076 & 0.0002 & SIT1 & 0.0009\\
+5 & Cluster 55494 & 0.0002 & SIRPG & 0.0009\\
+6 & Cluster 54291 & 0.0002 & SLA2 & 0.001\\
+7 & Cluster 46347 & 0.0002 & FOXC1 & 0.0011\\
+8 & Cluster 33213 & 0.0002 & TBX21 & 0.0012\\
+9 & Cluster 32767 & 0.0002 & SLAMF6 & 0.0012\\
+10 & Cluster 17458 & 0.0002 & SP140 & 0.0013\\
 \cline{1-5}
 \end{tabular}
 \end{table}
 \begin{table}[h!]
 \centering
-\caption{\label{tab:tab2}Nestedness scores of the network. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network. In the case of BINMATNEST temperature we have used 100 different random matrices and p-values for three null models are $p_{1} = 0.01$, $p_{2} = 0.04$ and $p_{3} = 0.06$.}
+\caption{\label{tab:tab6}Nestedness scores of the network obtained from $\rho_{c} = 0.8$. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network.}
 \begin{tabular}{|r|r|}
 \cline{1-2}
 NODF & Temperature\\
 \cline{1-2}
-0.3&0.9\\
+0.8 & 0.9\\
 \cline{1-2}
 \end{tabular}
 \end{table}
 \clearpage
 \printbibliography
-	\end{document}	
+\end{document}	
