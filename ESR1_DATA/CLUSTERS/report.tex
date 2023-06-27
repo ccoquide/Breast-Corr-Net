@@ -83,11 +83,12 @@ Nested structures appear in the nature such that in ecological and socio-economi
 \left\{
 \begin{matrix}
 F^{(n)}_{d} =  \sum_{r} B_{dr}Q^{(n-1)}_{r}\\
-Q^{(n)}_{r} =  (\frac{1}{\sum_{d}B_{dr}\frac{1}{(F^{(n-1)}_{c})^{\gamma}}})^{1/\gamma}
+Q^{(n)}_{r} =  \frac{1}{\sum_{d}B_{dr}(1-F^{(n-1)}_{c})}
 \end{matrix}
 \right.
+\label{eq:eq1}
 \end{equation}
-with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$. We set $\gamma$ to $2$.
+with $B_{dr}$ an element of the bi-adjacency matrix representing the correlation (positive or negative) interaction between a Methylated DNA $d$ and an RNA $r$, $F^{(n)}$ and $Q^{(n)}$ the Fitness and Complexity vector measured at iteration $n$.
 \paragraph{Product's complexity}
 \subsection{Data}
 We used an open access cancer dataset from GDC Data Portal. From raw data consisting in methylated DNA and RNA's beta-values for up to 841 tumorous and normal breast tissues, we built a Matrix of Pearson Correlation Coefficients between Methylated DNA and RNA from these beta-values. A network representing the Pearson correlation coefficients between pairs (M-DNA,RNA) consists in a bipartite graph with coefficients as weight of the links containing. We also project DNAs into spacial clusters of length 40K base-pairs, this turns $N_{DNA} = 364285$ DNAs into a set of $N_{cl} = 93690$ clusters. The nature of correlations are either positive or negative.
@@ -106,37 +107,112 @@ The set of ESR1 synthesis and regulation consists in 508 RNAs and 4959 clusters 
 \begin{center}
 \resizebox{0.7\columnwidth}{!}{%
 \includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Degree-Matrix-unit-0.7-PN.pdf}
-\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-ESR1-Matrix-unit-0.7.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-ESR1-Matrix-sum-unit-0.7-PN.pdf}
 %\end{center}
 }
 \end{center}
-\caption{\label{fig:fig1}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in ESR1 synthesis and regulation. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $|\rho| \geq 0.7$.}
+\caption{\label{fig:fig1}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in ESR1 synthesis and regulation. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $\rho_{c} = 0.7$.}
 \end{figure}
  \begin{table}[h!]
 \centering
-\caption{\label{tab:tab1} Highest Clustered DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.
- $^{1}$: cg02730804, cg04077850, cg14800014, cg13049992, cg09168797 and cg01977473, $^{2}$: cg27121959, $^{3}$:cg03633268.}
+\caption{\label{tab:tab1} Top 10 DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.}
 \begin{tabular}{l|rr|rr|}
 \cline{1-5}
-RANK & CLUSTER ID & SCORE & RNA & SCORE\\
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
 \cline{1-5}
-1 & Cluster 91401$^{1}$ & 0.45 & MYB & 0.53\\
-2 & Cluster 62518$^{2}$ & 0.28 & THSD4 & 0.24\\
-3 & Cluster 20099$^{3}$ & 0.28 & CT62 & 0.22\\
+1 & Cluster 91401 & 0.0779 & MYB & 0.0770\\
+2 & Cluster 226 & 0.0556 & FSIP1 & 0.0755\\
+3 & Cluster 62518 & 0.0501 & SRARP & 0.0739\\
+4 & Cluster 20099 & 0.0373 & B3GALT1 & 0.07389\\
+5 & Cluster 10765 & 0.0321 & PDZK1 & 0.07389\\
+6 & Cluster 11329 & 0.0321 & SCNN1A & 0.0739\\
+7 & Cluster 14885 & 0.0321 & ID4 & 0.0739\\
+8 & Cluster 42066 & 0.0321 & SVEP1 & 0.0739\\
+9 & Cluster 53084 & 0.0321 & CALML5 & 0.0739\\
+10 & Cluster 55962 & 0.0321 & PTH1R & 0.0739\\
+\cline{1-5}
+\end{tabular}
+\end{table}
+ \begin{table}[h!]
+\centering
+\caption{\label{tab:tab2} Last 10 DNAs and RNAs in terms of fitness and complexity scores, 30 RNAs and 228 Clusters, with $\rho_{c} = 0.7$.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
+\cline{1-5}
+1 & Cluster 83419 & 0.0004 & SIT1 & 0.0008\\
+2 & Cluster 74585 & 0.0004 & MID1 & 0.0011\\
+3 & Cluster 66780 & 0.0004 & FOXA1 & 0.0012\\
+4 & Cluster 58323 & 0.0004 & CCR7 & 0.0013\\
+5 & Cluster 55730 & 0.0004 & MLPH & 0.0013\\
+6 & Cluster 49933 & 0.0004 & PRR15 & 0.0014\\
+7 & Cluster 48271 & 0.0004 & IRF4 & 0.0015\\
+8 & Cluster 24558 & 0.0004 & ICOS & 0.0017\\
+9 & Cluster 24467 & 0.0004 & ESR1 & 0.0027\\
+10 & Cluster 22095 & 0.0004 & TTC6 & 0.0031\\
 \cline{1-5}
 \end{tabular}
 \end{table}
 \begin{table}[h!]
 \centering
-\caption{\label{tab:tab2}Nestedness scores of the network. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network. In the case of BINMATNEST temperature we have used 100 different random matrices and p-values for three null models are $p_{1} = 0.01$, $p_{2} = 0.04$ and $p_{3} = 0.06$.}
+\caption{\label{tab:tab3}Nestedness scores of the network obtained from $\rho_{c} = 0.7$. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network.}
 \begin{tabular}{|r|r|}
 \cline{1-2}
 NODF & Temperature\\
 \cline{1-2}
-0.3&4.4\\
+0.3 & 4.4\\
+\cline{1-2}
+\end{tabular}
+\end{table}
+\begin{figure}[h!]
+%\begin{center}
+\begin{center}
+\resizebox{0.7\columnwidth}{!}{%
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Matrix-unit-0.8-PN.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_FQ-Matrix-sum-unit-0.8-PN.pdf}
+}
+\end{center}
+\begin{center}
+\resizebox{0.7\columnwidth}{!}{%
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_Degree-Matrix-unit-0.8-PN.pdf}
+\includegraphics[width=0.5\columnwidth]{FIG/ADN_c-ARN_BINMATNEST-ESR1-Matrix-sum-unit-0.8-PN.pdf}
+%\end{center}
+}
+\end{center}
+\caption{\label{fig:fig2}Binary bi-adjacency matrix representing the interactions between Clustered DNAs and RNAs involved in ESR1 synthesis and regulation. Matrix entries related to positive correlations are in blue, and negative in orange, finally empty cells are in bright yellow. Raw matrix (top left), Fitness and Complexity based reorganized matrix (top right), Degree based reorganized matrix (bottom left) and matrix with cols and rows reorganized from BINMATNEST algorithm. Here we have considered all Pearson correlation such that $\rho_{c} = 0.8$.}
+\end{figure}
+ \begin{table}[h!]
+\centering
+\caption{\label{tab:tab4} All Clustered DNAs and RNAs in terms of fitness and complexity scores, 5 RNAs and 11 Clusters, with $\rho_{c} = 0.8$.}
+\begin{tabular}{l|rr|rr|}
+\cline{1-5}
+RANK & CLUSTER ID & Fitness Score & RNA & Complexity Score\\
+\cline{1-5}
+1 & Cluster 11394 & 0.187 & ESR1 & 0.365\\
+2 & Cluster 34909 & 0.187 & ICOS & 0.236\\
+3 & Cluster 78422 & 0.163 & FOXA1 & 0.217\\
+4 & Cluster 18269 & 0.097 & CCR7 & 0.122\\
+5 & Cluster 91401 & 0.097 & SIT1 & 0.059\\
+6 & Cluster 18410 & 0.081 & & \\
+7 & Cluster 83354 & 0.081 & &\\
+8 & Cluster 30403 & 0.026 & & \\
+9 & Cluster 33345 & 0.026 & & \\
+10 & Cluster 42067 & 0.026 & & \\
+11 & Cluster 79424 & 0.026 & & \\
+\cline{1-5}
+\end{tabular}
+\end{table}
+\begin{table}[h!]
+\centering
+\caption{\label{tab:tab5}Nestedness scores of the network obtained from $\rho_{c} = 0.8$. The NODF (BINMATNEST) score goes from $0$ (form $100$) for non nested network to $1$ ( to $0$) for highly nested network.}
+\begin{tabular}{|r|r|}
+\cline{1-2}
+NODF & Temperature\\
+\cline{1-2}
+0.3 & 16.3\\
 \cline{1-2}
 \end{tabular}
 \end{table}
 \clearpage
 \printbibliography
-	\end{document}	
+\end{document}	

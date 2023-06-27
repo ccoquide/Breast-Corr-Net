@@ -1,0 +1,13 @@
+Correlation matrix, Row - Column = DNA - RNA, Context = ESR1, both signs correlations, option = unit) and threshold = 0.8
+endnotes
+10000
+01011
+01011
+00100
+00100
+00011
+00011
+00001
+00001
+00001
+00001

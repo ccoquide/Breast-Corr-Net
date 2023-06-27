@@ -1,0 +1,18 @@
+RNA_ID	CLUSTER_ID	Correlation_Sign	RNA_Name	Cluster_Name
+1	1	1.0	CCR7	Cluster 11394
+2	1	1.0	SIT1	Cluster 11394
+3	1	1.0	ICOS	Cluster 11394
+4	2	-1.0	FOXA1	Cluster 18269
+1	3	1.0	CCR7	Cluster 18410
+2	3	1.0	SIT1	Cluster 18410
+2	4	1.0	SIT1	Cluster 30403
+2	5	1.0	SIT1	Cluster 33345
+1	6	1.0	CCR7	Cluster 34909
+2	6	1.0	SIT1	Cluster 34909
+3	6	1.0	ICOS	Cluster 34909
+2	7	1.0	SIT1	Cluster 42067
+5	8	-1.0	ESR1	Cluster 78422
+2	9	1.0	SIT1	Cluster 79424
+1	10	1.0	CCR7	Cluster 83354
+2	10	1.0	SIT1	Cluster 83354
+4	11	-1.0	FOXA1	Cluster 91401
