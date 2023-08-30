@@ -1,0 +1,12 @@
+se de données sur les interaction (taux présence) de différents M-DNA et RNAs entre 841 tissues tumoraux du sein. (Contexte cancerologie)
+        2 Base d'articles Pubmed = Des recherches sur différentes protéines, le contexte biologique dans lesquels elles sont présentes, possible target thérapy.
+
+        3 Partie étude topologique du réseau de correlation ADN ARN => Un caractère nested. Mis en évidence par la métrique COmplexity Fitness (analogie avec le commerce et la production de produit)
+        4 Stratification des protéines, plus ou moins complexe
+        5 couplage entre la role joué par différentes priotéine dans ce réseau nested et les études qui sont menées sur elles dans pubmed.
+        6 question, y a t-il un sens, du genre plus t'es complex plus le contexte biologique type cancerologie est présent, et inversement
+        7 On peut regard le knwoledge graph associé à un ensemble de protéines type (top 10 top5 en terme score complexity) qu(rst-ce qui en ressort, comment ça évolue avec le score.
+
+        Stat grossière entre la recherche sur les protéines et leur score complexity
+        Analyse fine, à caractère sémantique knowledge graph, sur le contexte biologique
+        Set de mot clef semantique d'intérêt en rapport avec la target therapy, le cancer, breast cancer
