@@ -2,14 +2,9 @@
 
 # Networks files, nodes' information and preliminary results associated to Methylated-DNA X RNA pearson correlations in the context of about 800 tissues from breast cancer.
 
-## Complexity and Fitness metric and the DNA-RNA correlations network
+## I. Dependencies and Setup
 
-1. `ALLMAT/` contains results regarding the whole correlation matrix
-2. `ESR1_DATA/`contains results associated to the subset related to ESR1 CGs and RNAs involved in its regulation
-3. `DRAFT/` is devoted to the paper draft
-4. `ScriptR/` contains R script written by Alexis
-5. `old/` contains old files and folders (has to be deleted)
-
+1. Cytoscape version >= 3.8.2 (https://cytoscape.org/)
 
 - Files `CC_col/RNA.cys` and `CC_row/MethDNA.cys` has to be opened with Cytoscape and contains network style presets for RNA-RNA and DNA-DNA correlations sub-networks visualisation respectively.
 
