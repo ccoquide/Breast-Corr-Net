@@ -1,0 +1,9 @@
+309710 cgs in colon
+364284 cgs in breast
+268991 cgs in both breast and colon datasets
+40719 cgs only present in colon data
+95293 cgs only present in breast data
+There are 46852  full clusters among  93690  clusters
+In average, not full clusters are filled at  37.72  %
+There are  20805 totally empty clusters
+Writting new clusters list
