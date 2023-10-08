@@ -1,3 +1,0 @@
-#ID	#NAME	#NISPRESENT	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
-1	cg02718824	1	13760	66	LETMD1	ENSG00000050426	25875	uc001rxl.3
-2	cg11226480	1	13759	8	LETMD1	ENSG00000050426	25875	uc010smz.2

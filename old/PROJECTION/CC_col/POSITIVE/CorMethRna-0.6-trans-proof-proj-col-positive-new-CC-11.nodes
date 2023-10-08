@@ -1,4 +1,0 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2
-1	ENSG00000223698	1	GOLGA6L11P	GOLGA6L11P	Y	24168187	24174494	1	ENSG00000223698	unprocessed_pseudogene	other	pseudogene	ND	360024	360024
-2	ENSG00000197092	1	GOLGA6L16P	GOLGA6L16P	Y	25495651	25501958	-1	ENSG00000197092	unprocessed_pseudogene	other	pseudogene	ND	100287845	100287845
-3	ENSG00000255279	1	AC023442.3	AC023442.3	11	41855920	41875997	1	ENSG00000255279	lncRNA	non coding	lncRNA	ND	ND	ND

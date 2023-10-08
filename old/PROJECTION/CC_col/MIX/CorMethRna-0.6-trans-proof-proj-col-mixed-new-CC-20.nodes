@@ -1,3 +1,0 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2
-1	ENSG00000240095	1	AC055758.1	AC055758.1	3	145961755	145963623	1	ENSG00000240095	lncRNA	non coding	lncRNA	ND	ND	ND
-2	ENSG00000244358	1	AC055758.2	AC055758.2	3	145939912	145961536	1	ENSG00000244358	lncRNA	non coding	lncRNA	ND	ND	ND

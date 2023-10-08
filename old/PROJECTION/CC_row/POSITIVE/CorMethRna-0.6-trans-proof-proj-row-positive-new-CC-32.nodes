@@ -1,3 +1,0 @@
-#ID	#NAME	#NISPRESENT	subjectHits	distance	nearestGeneSymbol	ensembl_gene_id	entrez_id	nearestTranscript
-1	cg08333333	1	39778	277	ZNF835	ENSG00000127903	90485	uc010ygn.2
-2	cg08158952	1	39778	105	ZNF835	ENSG00000127903	90485	uc010ygn.2

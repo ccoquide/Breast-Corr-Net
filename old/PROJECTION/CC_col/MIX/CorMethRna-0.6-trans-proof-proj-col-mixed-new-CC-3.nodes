@@ -1,3 +1,0 @@
-#ID	#NAME	#NISPRESENT	external_gene_name	GeneName	chromosome_name	start_position	end_position	strand	ensembl_gene_id	Biotyoe	TypeSimpl	Type	EntrezID	EntrezID.1	EntrezID.2
-1	ENSG00000080007	1	DDX43	DDX43	6	73394748	73417569	1	ENSG00000080007	protein_coding	coding	mRNA	55510	55510	55510
-2	ENSG00000203907	1	OOEP	OOEP	6	73368555	73395133	-1	ENSG00000203907	protein_coding	coding	mRNA	441161	441161	441161
